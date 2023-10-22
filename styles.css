@@ -1,13 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e6e6e6;
+    font-family: 'Arial', sans-serif;
+    background: #e6e6e6;
     overflow: hidden;
 }
 
 .mac-window {
     width: 300px;
     height: 400px;
-    background-color: #fff;
+    background: #fff;
     border-radius: 5px;
     overflow: hidden;
     position: absolute;
@@ -20,7 +20,7 @@ body {
 
 .window-header {
     height: 30px;
-    background-color: #c7c7c7;
+    background: #c7c7c7;
     display: flex;
     align-items: center;
     padding-left: 10px;
@@ -33,17 +33,9 @@ body {
     margin-right: 5px;
 }
 
-.close {
-    background-color: #ff5f56;
-}
-
-.minimize {
-    background-color: #ffbd2e;
-}
-
-.maximize {
-    background-color: #27c93f;
-}
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #27c93f; }
 
 .window-content img {
     width: 100%;
@@ -52,4 +44,3 @@ body {
     display: block;
     margin: auto;
 }
-
