@@ -5,8 +5,8 @@ body {
 }
 
 .mac-window {
-    width: 300px;
-    height: 400px;
+    max-width: 80vw; /* 80% of the viewport width */
+    max-height: 80vh; /* 80% of the viewport height */
     background: #fff;
     border-radius: 5px;
     overflow: hidden;
@@ -41,7 +41,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: calc(100% - 30px); /* Subtracting the window-header height */
 }
 
 .window-content img {
