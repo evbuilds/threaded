@@ -1,11 +1,13 @@
 .mac-window {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;  /* Hide any overflowing content */
+    width: 80vw;  /* Setting a default width, can be modified */
+    height: 80vh; /* Setting a default height, can be modified */
     background-color: #e3e4e6;
     border-radius: 8px;
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* To layout header and content vertically */
 }
 
 body, html {
@@ -19,8 +21,30 @@ body, html {
     background-color: #f6f6f6;
 }
 
+.window-header {
+    display: flex;
+    padding: 8px;
+    background-color: #00C852;  /* Color taken from your image, modify if needed */
+}
+
+.button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.close { background-color: #FF5F56; }
+.minimize { background-color: #FFBD2E; }
+.maximize { background-color: #27C93F; }
+
+.window-content {
+    flex-grow: 1; /* Allow this to take up all remaining space */
+    overflow: hidden; /* No scrollbars */
+}
+
 svg {
     width: 100%;
-    height: 100%;
+    height: auto; /* Adjust height according to SVG's aspect ratio */
 }
 
