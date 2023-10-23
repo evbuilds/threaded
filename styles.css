@@ -38,16 +38,14 @@ body {
 .maximize { background: #27c93f; }
 
 .window-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: calc(100% - 30px); /* Subtracting the window-header height */
     width: 100%; /* Filling the entire width of the .mac-window */
 }
+
 .window-content img {
+    display: block; /* Changed this to block */
     max-width: 100%;
     max-height: 100%;
-    object-fit: cover; /* changed from contain to cover */
+    object-fit: cover;
     flex: 0 0 auto; /* This prevents the image from shrinking or growing in a flex container */
 }
-
