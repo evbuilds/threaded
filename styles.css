@@ -7,7 +7,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    resize: both; /* Allow both horizontal and vertical resizing */
+    resize: both;
 }
 
 body, html {
@@ -44,25 +44,26 @@ body, html {
 .maximize { background-color: #27C93F; }
 
 .window-content {
-    flex-grow: 1; /* This disables the element's ability to grow and fill available space */
-    padding-bottom: 145%; /* Aspect ratio padding */
-    height: auto; /* Setting height to auto */
-    overflow: hidden; /* This will ensure no scrollbars appear */
+    flex-grow: 1;
+    padding-bottom: 138.18%; /* Aspect ratio padding based on your SVG */
+    overflow: hidden;
     position: relative;
 }
 
 svg {
     width: 100%;
     height: 100%;
-    position: absolute; /* Setting SVG to absolute */
+    position: absolute;
     top: 0;
     left: 0;
     display: block;
 }
+
 .mac-window::before,
 .mac-window::after {
     content: none;
 }
+
 .mac-window {
     overflow: hidden;
 }
