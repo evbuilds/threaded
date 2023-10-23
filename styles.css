@@ -1,52 +1,26 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background: #e6e6e6;
-    overflow: hidden;
-}
-
 .mac-window {
-    width: 300px;
-    height: 400px;
-    background: #fff;
-    border-radius: 5px;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    resize: both;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;  /* Hide any overflowing content */
+    background-color: #e3e4e6;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.window-header {
-    height: 30px;
-    background: #c7c7c7;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-}
-
-.button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-right: 5px;
-}
-
-.close { background: #ff5f56; }
-.minimize { background: #ffbd2e; }
-.maximize { background: #27c93f; }
-
-.window-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100% - 30px); /* Subtracting the window-header height */
-    width: 100%; /* Filling the entire width of the .mac-window */
-}
-
-.window-content svg {
+body, html {
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
 }
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
