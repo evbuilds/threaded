@@ -45,9 +45,8 @@ body {
     width: 100%; /* Filling the entire width of the .mac-window */
 }
 
-.window-content img {
-    width: 100%; /* Set the width of the image to fill the container */
-    height: 100%; /* Set the height of the image to fill the container */
-    object-fit: contain; /* Ensure the image maintains its aspect ratio without getting cropped */
+.window-content svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
-
