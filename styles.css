@@ -1,13 +1,15 @@
 .mac-window {
-    width: 80vw;  /* Setting a default width, can be modified */
-    height: 80vh; /* Setting a default height, can be modified */
+    width: 80vw;
+    height: 80vh;
     background-color: #e3e4e6;
     border-radius: 8px;
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
-    flex-direction: column; /* To layout header and content vertically */
+    flex-direction: column;
+    resize: both; /* Allow both horizontal and vertical resizing */
+    overflow: auto; /* To handle overflow during resizing */
 }
 
 body, html {
@@ -23,20 +25,20 @@ body, html {
 
 .window-header {
     display: flex;
-    align-items: center; /* Vertically align buttons */
+    align-items: center;
     padding: 8px;
-    background-color: #00C852;  /* Color taken from your image, modify if needed */
+    background-color: #5D5855; 
 }
 
 .button {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    margin-right: 8px; /* Increased spacing for better aesthetics */
+    margin-right: 8px;
 }
 
 .button:last-child {
-    margin-right: 0; /* No margin for the last button to keep alignment consistent */
+    margin-right: 0;
 }
 
 .close { background-color: #FF5F56; }
@@ -44,12 +46,12 @@ body, html {
 .maximize { background-color: #27C93F; }
 
 .window-content {
-    flex-grow: 1; /* Allow this to take up all remaining space */
-    overflow: hidden; /* No scrollbars */
+    flex-grow: 1;
+    overflow: hidden;
 }
 
 svg {
     width: 100%;
-    height: auto; /* Adjust height according to SVG's aspect ratio */
-    display: block; /* Remove any default margins/padding */
+    height: auto;
+    display: block;
 }
