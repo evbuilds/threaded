@@ -11,7 +11,6 @@ body, html {
 
 .mac-window {
     width: 80vw;
-    height: 80vh;
     background-color: #e3e4e6;
     border-radius: 8px;
     position: relative;
@@ -26,7 +25,7 @@ body, html {
     align-items: center;
     padding: 8px;
     background-color: #5D5855;
-    flex-shrink: 0; /* This ensures that the header doesn't shrink */
+    flex-shrink: 0;
 }
 
 .button {
@@ -45,16 +44,18 @@ body, html {
 .maximize { background-color: #27C93F; }
 
 .window-content {
-    flex-grow: 1;
     position: relative;
     overflow: hidden;
+    padding-bottom: calc(80vw * (x/1778)); /* Adjust x to be the height of your mac-window at 1778px width */
 }
 
 svg {
     display: block;
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
