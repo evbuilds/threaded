@@ -43,7 +43,7 @@ body {
     justify-content: center;
     height: calc(100% - 30px); 
     width: 100%; 
-    background: url('path-to-your-image.jpg') no-repeat center center; /* Replace with your image path */
+    background: url('threadedtides_alt2png.png') no-repeat center center; /* Replace with your image path */
     background-size: cover;
 }
 
