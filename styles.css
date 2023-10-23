@@ -10,24 +10,23 @@ body, html {
 }
 
 .mac-window {
+    /* Set the maximum width you'd want for the window */
+    width: 90vw;
+    /* Now, set the height based on the SVG's aspect ratio (4404/6082) */
+    height: calc(90vw * 4404 / 6082);
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    overflow: hidden; 
-    resize: both; /* Allows the div to be resizable */
-    overflow: auto; /* Handles the scrollbars when resizing */
-    max-width: 100%;
-    max-height: 100%;
+    overflow: hidden;
 }
 
 .window-header {
     display: flex;
-    background-color: #e6e6e6;
-    padding: 8px;
     align-items: center;
-    justify-content: flex-start;
+    padding: 8px;
+    background-color: #e6e6e6;
 }
 
 .button {
@@ -37,26 +36,28 @@ body, html {
     margin-right: 8px;
 }
 
-.button.close {
-    background-color: #FF5F57;
+.close {
+    background-color: #FF5F56;
 }
 
-.button.minimize {
+.minimize {
     background-color: #FFBD2E;
 }
 
-.button.maximize {
+.maximize {
     background-color: #28C940;
 }
 
 .window-content {
     flex-grow: 1;
-    overflow: hidden; /* Ensures the content doesn't overflow the div */
-    position: relative; /* To make sure the SVG scales based on this container */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-svg {
+.window-content svg {
+    /* Make sure SVG takes the full width and height of its container */
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
 }
