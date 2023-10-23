@@ -55,3 +55,7 @@ svg {
     height: auto;
     display: block;
 }
+.mac-window::before,
+.mac-window::after {
+    content: none;
+}
