@@ -1,31 +1,35 @@
-const macWindow = document.querySelector('.mac-window');
-const windowHeader = macWindow.querySelector('.window-header');
-const closeButton = macWindow.querySelector('.close');
-const maximizeButton = macWindow.querySelector('.maximize');
+document.addEventListener('DOMContentLoaded', () => {
+  const windows = document.querySelectorAll('.window');
 
-let [isDragging, isMaximized, startX, startY] = [false, false, 0, 0];
+  windows.forEach(window => {
+    const titleBar = window.querySelector('.title-bar');
 
-windowHeader.addEventListener('mousedown', e => {
-    isDragging = true;
-    const rect = macWindow.getBoundingClientRect();
-    [startX, startY] = [e.clientX - rect.left, e.clientY - rect.top];
-});
+    titleBar.onmousedown = function (e) {
+      let offsetX = e.clientX - parseInt(window.style.left);
+      let offsetY = e.clientY - parseInt(window.style.top);
 
-document.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    macWindow.style.left = `${e.clientX - startX}px`;
-    macWindow.style.top = `${e.clientY - startY}px`;
-});
+      function mouseMoveHandler(e) {
+        window.style.top = `${e.clientY - offsetY}px`;
+        window.style.left = `${e.clientX - offsetX}px`;
+      }
 
-document.addEventListener('mouseup', () => isDragging = false);
+      function mouseUpHandler() {
+        document.removeEventListener('mousemove', mouseMoveHandler);
+        document.removeEventListener('mouseup', mouseUpHandler);
+      }
 
-closeButton.addEventListener('click', () => macWindow.style.display = 'none');
+      document.addEventListener('mousemove', mouseMoveHandler);
+      document.addEventListener('mouseup', mouseUpHandler);
+    };
+    
+    window.querySelector('.close').onclick = function () {
+      window.style.display = 'none';
+    };
 
-maximizeButton.addEventListener('click', () => {
-    isMaximized = !isMaximized;
-    if (isMaximized) {
-        Object.assign(macWindow.style, { top: '0', left: '0', width: '100vw', height: '100vh', transform: '' });
-    } else {
-        Object.assign(macWindow.style, { width: '300px', height: '400px', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' });
-    }
+    window.querySelector('.maximize').onclick = function () {
+      window.classList.toggle('maximized');
+    };
+
+    // The actual resize functionality would be more complex, possibly using a library like interact.js
+  });
 });
