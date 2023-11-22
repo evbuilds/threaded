@@ -3,50 +3,30 @@
     width: 100%;
     height: 100vh;
     background-color: #f0f0f0;
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .window {
-    position: absolute;
+    width: calc(50% - 40px); /* Adjust the width to account for margin */
+    margin: 20px;
     border: 1px solid #ccc;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     resize: both; /* Enable resizing */
     overflow: auto; /* Needed for resizing */
+    box-sizing: border-box;
 }
 
-.title-bar {
-    cursor: grab;
-    background-color: #e1e1e1;
-    padding: 5px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    display: flex;
-    align-items: center;
-}
-
-.title-bar-buttons {
-    display: flex;
-}
-
-.button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-right: 5px;
-}
-
-.close { background-color: #ff5f57; }
-.minimize { background-color: #ffbd2e; }
-.maximize { background-color: #27c93f; }
-
-.content {
-    padding: 10px;
-}
+/* ... rest of the CSS ... */
 
 .content img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
 }
