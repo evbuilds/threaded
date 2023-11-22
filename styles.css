@@ -1,3 +1,36 @@
+:root {
+  --background-color-light: #f0f0f0; /* Light mode background */
+  --window-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light mode window shadow */
+
+  --background-color-dark: #1e1e1e; /* Dark mode background */
+  --window-shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.5); /* Dark mode window shadow */
+
+  /* Define other variables as needed */
+}
+
+/* Light mode styles (default) */
+body {
+  background-color: var(--background-color-light);
+}
+
+.window {
+  box-shadow: var(--window-shadow-light);
+  /* Other styles */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: var(--background-color-dark);
+}
+
+body.dark-mode .window {
+  box-shadow: var(--window-shadow-dark);
+  /* Other dark mode styles */
+}
+
+/* Existing styles for .window, .title-bar, .content, etc. */
+/* ... */
+
 .desktop {
     position: relative;
     width: 100%;
