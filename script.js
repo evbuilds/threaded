@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const titleBar = window.querySelector('.title-bar');
 
     titleBar.onmousedown = function (e) {
-      let offsetX = e.clientX - parseInt(window.style.left);
-      let offsetY = e.clientY - parseInt(window.style.top);
+      let offsetX = e.clientX - parseInt(window.style.left, 10);
+      let offsetY = e.clientY - parseInt(window.style.top, 10);
 
       function mouseMoveHandler(e) {
         window.style.top = `${e.clientY - offsetY}px`;
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.addEventListener('mousemove', mouseMoveHandler);
       document.addEventListener('mouseup', mouseUpHandler);
     };
-    
+
     window.querySelector('.close').onclick = function () {
       window.style.display = 'none';
     };
@@ -29,7 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.querySelector('.maximize').onclick = function () {
       window.classList.toggle('maximized');
     };
-
-    // The actual resize functionality would be more complex, possibly using a library like interact.js
   });
 });
