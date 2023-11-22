@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Function to toggle dark mode
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+
+  // Event listener for keyboard shortcut
+  document.addEventListener('keydown', (e) => {
+    // Toggle dark mode when 'D' key is pressed
+    if (e.key === 'd' || e.key === 'D') {
+      toggleDarkMode();
+    }
+  });
+document.addEventListener('DOMContentLoaded', () => {
   const windows = document.querySelectorAll('.window');
 
   // Function to apply square resizing
