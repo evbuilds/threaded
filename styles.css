@@ -1,60 +1,33 @@
 :root {
-  --background-color-light: #f0f0f0; /* Light mode background */
-  --window-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light mode window shadow */
-
-  --background-color-dark: #1e1e1e; /* Dark mode background */
-  --window-shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.5); /* Dark mode window shadow */
-
-  /* Define other variables as needed */
+    --background-color: #f0f0f0;
 }
 
-/* Light mode styles (default) */
-body {
-  background-color: var(--background-color-light);
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--background-color);
 }
-
-.window {
-  box-shadow: var(--window-shadow-light);
-  /* Other styles */
-}
-
-/* Dark mode styles */
-body.dark-mode {
-  background-color: var(--background-color-dark);
-}
-
-body.dark-mode .window {
-  box-shadow: var(--window-shadow-dark);
-  /* Other dark mode styles */
-}
-
-/* Existing styles for .window, .title-bar, .content, etc. */
-/* ... */
 
 .desktop {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: #f0f0f0;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
+    height: 100%;
     padding: 10px;
     box-sizing: border-box;
 }
 
 .window {
-    width: calc(50% - 20px); /* Set width for two windows per row with spacing */
+    width: calc(50% - 20px);
     margin: 10px;
-    border: 1px solid #ccc;
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Hide overflow to avoid scrollbars */
-    position: relative; /* Needed for absolute positioning of content */
-    padding-top: calc(50% - 20px); /* Padding-top for 1:1 aspect ratio */
-    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    padding-top: calc(50% - 20px);
 }
 
 .title-bar {
@@ -66,7 +39,7 @@ body.dark-mode .window {
     position: absolute;
     width: 100%;
     top: 0;
-    z-index: 1;
+    z-index: 10;
 }
 
 .title-bar-buttons {
@@ -87,40 +60,14 @@ body.dark-mode .window {
 .content {
     width: 100%;
     height: 100%;
-    position: absolute; /* Absolute position to cover the padding area */
+    position: absolute;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .content img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover; /* Will cover the area of the container */
-}
-
-/* Resizers */
-.resizers {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-.resizer {
-  width: 20px;
-  height: 20px;
-  background: white;
-  border: 3px solid #999;
-  border-radius: 50%;
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  cursor: nwse-resize;
-  z-index: 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
