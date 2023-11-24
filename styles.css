@@ -1,45 +1,61 @@
 :root {
-    --background-color: #f0f0f0;
+    --background-color-light: #f0f0f0;
+    --window-color-light: #ffffff;
+    --title-bar-color-light: #e1e1e1;
+    --button-color-light: #ccc;
+    --button-close-light: #ff5f57;
+    --button-minimize-light: #ffbd2e;
+    --button-maximize-light: #27c93f;
+
+    --background-color-dark: #1e1e1e;
+    --window-color-dark: #333;
+    --title-bar-color-dark: #555;
+    --button-color-dark: #777;
+    --button-close-dark: #e84118;
+    --button-minimize-dark: #e1b12c;
+    --button-maximize-dark: #4cd137;
 }
 
 body, html {
-    height: 100%;
     margin: 0;
-    overflow: hidden;
-    background-color: var(--background-color);
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color-light);
+    font-family: Arial, sans-serif;
 }
 
 .desktop {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-around;
     height: 100%;
-    padding: 10px;
-    box-sizing: border-box;
 }
 
 .window {
     width: calc(50% - 20px);
     margin: 10px;
-    background-color: #ffffff;
+    background-color: var(--window-color-light);
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
     padding-top: calc(50% - 20px);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .title-bar {
     cursor: grab;
-    background-color: #e1e1e1;
+    background-color: var(--title-bar-color-light);
     padding: 6px 10px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     position: absolute;
-    width: 100%;
     top: 0;
-    z-index: 10;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .title-bar-buttons {
@@ -51,23 +67,47 @@ body, html {
     height: 12px;
     border-radius: 50%;
     margin-left: 4px;
+    background-color: var(--button-color-light);
+    transition: background-color 0.3s;
 }
 
-.close { background-color: #ff5f57; }
-.minimize { background-color: #ffbd2e; }
-.maximize { background-color: #27c93f; }
-
-.content {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+.close { background-color: var(--button-close-light); }
+.minimize { background-color: var(--button-minimize-light); }
+.maximize { background-color: var(--button-maximize-light); }
 
 .content img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
+
+/* Dark mode specific styles */
+body.dark-mode {
+    background-color: var(--background-color-dark);
+}
+
+body.dark-mode .window {
+    background-color: var(--window-color-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .title-bar {
+    background-color: var(--title-bar-color-dark);
+}
+
+body.dark-mode .button {
+    background-color: var(--button-color-dark);
+}
+
+body.dark-mode .close { background-color: var(--button-close-dark); }
+body.dark-mode .minimize { background-color: var(--button-minimize-dark); }
+body.dark-mode .maximize { background-color: var(--button-maximize-dark); }
+
+/* Styles for p5.js canvas */
+.window .content .p5-canvas {
+    width: 100%;
+    height: auto;
+    display: none; /* Hidden by default, shown when video is enabled */
+}
+
 
